@@ -47,9 +47,13 @@
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Mnn-Sl-4kp">
                                         <rect key="frame" x="11.5" y="104.5" width="320" height="320"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mnn-Sl-4kp" secondAttribute="height" multiplier="1:1" id="ezp-om-esc"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ZxK-Za-0Xm" appends="YES" id="W7c-gH-C3L"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZqR-2A-0OT" customClass="RatingControl" customModule="light" customModuleProvider="target">
                                         <rect key="frame" x="19.5" y="432.5" width="304" height="44"/>
@@ -105,6 +109,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="WIk-I9-azf" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="ZxK-Za-0Xm">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="gCY-tl-5yR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2762.4000000000001" y="54.422788605697157"/>
         </scene>
