@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3750F6E41ED9453000435D66 /* LibraryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */; };
+		3750F6E61ED94CA600435D66 /* LibraryItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */; };
+		3754DC001ED5B41D00B2CF1D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754DBFF1ED5B41D00B2CF1D /* RatingControl.swift */; };
 		37CD66821ED44A3600590A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD66811ED44A3600590A0A /* AppDelegate.swift */; };
-		37CD66841ED44A3600590A0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD66831ED44A3600590A0A /* ViewController.swift */; };
+		37CD66841ED44A3600590A0A /* LibItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD66831ED44A3600590A0A /* LibItemViewController.swift */; };
 		37CD66871ED44A3600590A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CD66851ED44A3600590A0A /* Main.storyboard */; };
 		37CD66891ED44A3600590A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CD66881ED44A3600590A0A /* Assets.xcassets */; };
 		37CD668C1ED44A3600590A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CD668A1ED44A3600590A0A /* LaunchScreen.storyboard */; };
 		37CD66971ED44A3600590A0A /* lightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD66961ED44A3600590A0A /* lightTests.swift */; };
 		37CD66A21ED44A3700590A0A /* lightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CD66A11ED44A3700590A0A /* lightUITests.swift */; };
+		37FB04021ED92CA300D817DA /* LibraryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB04011ED92CA300D817DA /* LibraryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemTableViewCell.swift; sourceTree = "<group>"; };
+		3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemTableViewController.swift; sourceTree = "<group>"; };
+		3754DBFF1ED5B41D00B2CF1D /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		37CD667E1ED44A3600590A0A /* light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = light.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CD66811ED44A3600590A0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37CD66831ED44A3600590A0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37CD66831ED44A3600590A0A /* LibItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibItemViewController.swift; sourceTree = "<group>"; };
 		37CD66861ED44A3600590A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37CD66881ED44A3600590A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37CD668B1ED44A3600590A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		37CD669D1ED44A3600590A0A /* lightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CD66A11ED44A3700590A0A /* lightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lightUITests.swift; sourceTree = "<group>"; };
 		37CD66A31ED44A3700590A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FB04011ED92CA300D817DA /* LibraryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				37CD66811ED44A3600590A0A /* AppDelegate.swift */,
-				37CD66831ED44A3600590A0A /* ViewController.swift */,
+				37FB04011ED92CA300D817DA /* LibraryItem.swift */,
+				37CD66831ED44A3600590A0A /* LibItemViewController.swift */,
 				37CD66851ED44A3600590A0A /* Main.storyboard */,
+				3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */,
+				3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */,
+				3754DBFF1ED5B41D00B2CF1D /* RatingControl.swift */,
 				37CD66881ED44A3600590A0A /* Assets.xcassets */,
 				37CD668A1ED44A3600590A0A /* LaunchScreen.storyboard */,
 				37CD668D1ED44A3600590A0A /* Info.plist */,
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37CD66841ED44A3600590A0A /* ViewController.swift in Sources */,
+				37FB04021ED92CA300D817DA /* LibraryItem.swift in Sources */,
+				3750F6E41ED9453000435D66 /* LibraryItemTableViewCell.swift in Sources */,
+				37CD66841ED44A3600590A0A /* LibItemViewController.swift in Sources */,
+				3754DC001ED5B41D00B2CF1D /* RatingControl.swift in Sources */,
+				3750F6E61ED94CA600435D66 /* LibraryItemTableViewController.swift in Sources */,
 				37CD66821ED44A3600590A0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +523,7 @@
 				37CD66A81ED44A3700590A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37CD66A91ED44A3700590A0A /* Build configuration list for PBXNativeTarget "lightTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				37CD66AB1ED44A3700590A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37CD66AC1ED44A3700590A0A /* Build configuration list for PBXNativeTarget "lightUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +541,7 @@
 				37CD66AE1ED44A3700590A0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
