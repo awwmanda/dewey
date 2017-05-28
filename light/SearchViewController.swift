@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var SearchBar: UITextField!
     @IBOutlet weak var EnterButton: UIButton!
+    @IBOutlet weak var SearchLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -41,6 +42,11 @@ class SearchViewController: UIViewController {
     //MARK:Actions
     
     @IBAction func search(_ sender: UIButton) {
+        
+      //  SearchLabel.text = "donedoneon"
+        performSegue(withIdentifier: "searchcomplete", sender: self)
+        
+
     }
     
 }

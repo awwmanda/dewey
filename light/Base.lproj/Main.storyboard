@@ -54,11 +54,12 @@
                     <connections>
                         <outlet property="EnterButton" destination="Sjb-D3-o82" id="bvZ-s6-uX7"/>
                         <outlet property="SearchBar" destination="IJx-cO-N4u" id="Dfp-Rq-5gY"/>
+                        <segue destination="wt1-HM-tv5" kind="presentation" identifier="searchcomplete" id="V3q-P3-ngC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4r-xw-cQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3508" y="-611.24437781109452"/>
+            <point key="canvasLocation" x="1966" y="-765"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="tne-QT-ifu">
@@ -164,7 +165,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2762.4000000000001" y="54.422788605697157"/>
+            <point key="canvasLocation" x="2743" y="331"/>
         </scene>
         <!--Library-->
         <scene sceneID="pfn-xj-Tqv">
@@ -264,7 +265,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNI-eu-zZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823.2" y="54.422788605697157"/>
+            <point key="canvasLocation" x="1967" y="331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T4a-AF-H4V">
@@ -272,8 +273,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-qK-9V8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3E1-9q-Qru" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="267"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbd-bj-xWQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -284,7 +283,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="2568.8000000000002" y="-611.24437781109452"/>
+            <point key="canvasLocation" x="1009" y="-811"/>
         </scene>
     </scenes>
     <resources>
