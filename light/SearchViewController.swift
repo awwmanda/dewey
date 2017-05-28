@@ -15,8 +15,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var SearchBar: UITextField!
     @IBOutlet weak var EnterButton: UIButton!
     @IBOutlet weak var SearchLabel: UILabel!
-    
-    
+    var urlstring = "http://openlibrary.org/search.json?title="
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -43,7 +43,12 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: UIButton) {
         
-        let url = URL(string: "http://api.fixer.io/latest")
+       // var searchdata = SearchBar.text
+        let searchdata = (SearchBar.text as! NSString).replacingOccurrences(of: " ", with: "+")
+        //append search data to main url
+        urlstring = urlstring + searchdata
+        
+        let url = URL(string: urlstring)
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error != nil
