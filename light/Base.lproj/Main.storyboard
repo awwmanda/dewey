@@ -11,6 +11,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="326-wM-1Cg">
+            <objects>
+                <viewController id="zt8-mK-BPL" customClass="SearchViewController" customModule="light" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xuh-Hu-Hc3"/>
+                        <viewControllerLayoutGuide type="bottom" id="AoW-Pg-0df"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PJy-sX-euf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                        <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-K7-NLn">
+                                <rect key="frame" x="16" y="72" width="93" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjb-D3-o82">
+                                <rect key="frame" x="306" y="142" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="search:" destination="zt8-mK-BPL" eventType="touchUpInside" id="pK3-D6-65P"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter book title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-cO-N4u">
+                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jEQ-Rd-2VP"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="267"/>
+                    <connections>
+                        <outlet property="EnterButton" destination="Sjb-D3-o82" id="bvZ-s6-uX7"/>
+                        <outlet property="SearchBar" destination="IJx-cO-N4u" id="Dfp-Rq-5gY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4r-xw-cQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3508" y="-611.24437781109452"/>
+        </scene>
         <!--New Entry-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -163,6 +212,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Library" id="wpL-kW-yhQ">
+                        <barButtonItem key="leftBarButtonItem" title="S" id="PCt-1r-Tau">
+                            <connections>
+                                <segue destination="zt8-mK-BPL" kind="popoverPresentation" popoverAnchorBarButtonItem="PCt-1r-Tau" id="Rtg-nL-fh7">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="D3q-YP-i7o">
                             <connections>
                                 <segue destination="gDK-d5-6eC" kind="presentation" identifier="AddItem" id="mzT-pC-P8L"/>
@@ -210,8 +266,31 @@
             </objects>
             <point key="canvasLocation" x="1823.2" y="54.422788605697157"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T4a-AF-H4V">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-qK-9V8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3E1-9q-Qru" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="267"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbd-bj-xWQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zt8-mK-BPL" kind="relationship" relationship="rootViewController" id="kS8-Wz-S9h"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2568.8000000000002" y="-611.24437781109452"/>
+        </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="150" height="240"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kS8-Wz-S9h"/>
+    </inferredMetricsTieBreakers>
 </document>
