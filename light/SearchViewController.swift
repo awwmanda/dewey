@@ -50,35 +50,21 @@ class SearchViewController: UIViewController {
         
         let url = URL(string: urlstring)
         
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil
-            {
-                print ("Error when executing URL task")
-            }
-            else
-            {
-                if let content = data
-                {
-                    do
-                    {
-                        //an array for all of the search results
-                        let searchResults = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                        //print(searchResults)
-                        if let docs = searchResults["docs"] as? NSArray{
-                        
-                            print (docs)
-           
-                        }
-                    }
-                    catch {
-                        print ("error while parsing JSON result")
-                    }
-
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print ("Error when executing URL task")}
+            else {
+                do{
+                    let searchresults = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
+                    let docs = searchresults["docs"] as! [AnyObject]
+                        print (docs)
+                } catch let error as NSError {
+                    print(error)
                 }
-            }
-        }
-        task.resume()
-        
+                        }
+                                        }
+        .resume()
+    
         //   performSegue(withIdentifier: "searchcomplete", sender: self)
         //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/969535-M.jpg"
     }
