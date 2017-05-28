@@ -56,8 +56,24 @@ class SearchViewController: UIViewController {
             else {
                 do{
                     let searchresults = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-                    let docs = searchresults["docs"] as! [AnyObject]
-                        print (docs)
+                //    let docs = searchresults["docs"] as! [String:Any]
+                    //    print (docs)
+                    
+                    let docs = searchresults["docs"] as! [[String: Any]]
+                        //If you want array of task id you can try like
+                        let title = docs.flatMap { $0["title_suggest"] as? String }
+                        let titleresult = title.first
+                        print(docs)
+                        print(title)
+                    
+                    LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 0, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+                    
+                    //self.SearchLabel.text = " " + titleresult!
+
+                 //  for (key, value) in docs {
+                //      print("\(key) - \(value) ")
+                //    }
+                    
                 } catch let error as NSError {
                     print(error)
                 }
@@ -65,7 +81,7 @@ class SearchViewController: UIViewController {
                                         }
         .resume()
     
-        //   performSegue(withIdentifier: "searchcomplete", sender: self)
+        //performSegue(withIdentifier: "searchcomplete", sender: self)
         //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/969535-M.jpg"
     }
 }
