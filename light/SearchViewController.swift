@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var SearchBar: UITextField!
     @IBOutlet weak var EnterButton: UIButton!
     @IBOutlet weak var SearchLabel: UILabel!
-    var urlstring = "http://openlibrary.org/search.json?title="
+    var urlstring = "http://openlibrary.org/search.json?q="
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,17 +63,23 @@ class SearchViewController: UIViewController {
                     {
                         //an array for all of the search results
                         let searchResults = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                        print(searchResults)
+                        //print(searchResults)
+                        if let docs = searchResults["docs"] as? NSArray{
+                        
+                            print (docs)
+           
+                        }
                     }
                     catch {
                         print ("error while parsing JSON result")
                     }
-                    
-                    
-                    //   performSegue(withIdentifier: "searchcomplete", sender: self)
+
                 }
             }
         }
         task.resume()
+        
+        //   performSegue(withIdentifier: "searchcomplete", sender: self)
+        //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/969535-M.jpg"
     }
 }
