@@ -43,10 +43,32 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: UIButton) {
         
-      //  SearchLabel.text = "donedoneon"
-        performSegue(withIdentifier: "searchcomplete", sender: self)
+        let url = URL(string: "http://api.fixer.io/latest")
         
-
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil
+            {
+                print ("Error when executing URL task")
+            }
+            else
+            {
+                if let content = data
+                {
+                    do
+                    {
+                        //an array for all of the search results
+                        let searchResults = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                        print(searchResults)
+                    }
+                    catch {
+                        print ("error while parsing JSON result")
+                    }
+                    
+                    
+                    //   performSegue(withIdentifier: "searchcomplete", sender: self)
+                }
+            }
+        }
+        task.resume()
     }
-    
 }
