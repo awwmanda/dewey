@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--New Search-->
         <scene sceneID="326-wM-1Cg">
             <objects>
                 <viewController id="zt8-mK-BPL" customClass="SearchViewController" customModule="light" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,47 +19,46 @@
                         <viewControllerLayoutGuide type="top" id="xuh-Hu-Hc3"/>
                         <viewControllerLayoutGuide type="bottom" id="AoW-Pg-0df"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PJy-sX-euf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                    <view key="view" contentMode="scaleAspectFit" id="PJy-sX-euf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-K7-NLn">
-                                <rect key="frame" x="16" y="72" width="93" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjb-D3-o82">
-                                <rect key="frame" x="306" y="142" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="search:" destination="zt8-mK-BPL" eventType="touchUpInside" id="pK3-D6-65P"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter book title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-cO-N4u">
-                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter book title/author/ISBN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JX0-4j-Vgo">
+                                <rect key="frame" x="16" y="122" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-S0-PiD">
+                                <rect key="frame" x="164" y="160" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GO"/>
+                                <connections>
+                                    <action selector="search:" destination="zt8-mK-BPL" eventType="touchUpInside" id="7Ut-M7-I8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jEQ-Rd-2VP"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="267"/>
+                    <navigationItem key="navigationItem" title="New Search" id="xIE-sI-DDI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1WT-7L-NDc">
+                            <connections>
+                                <segue destination="u7R-H2-XG8" kind="unwind" unwindAction="unwindToLibItemListWithSender:" id="KVA-jF-k1U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="EnterButton" destination="Sjb-D3-o82" id="bvZ-s6-uX7"/>
-                        <outlet property="SearchBar" destination="IJx-cO-N4u" id="Dfp-Rq-5gY"/>
+                        <outlet property="SearchBar" destination="JX0-4j-Vgo" id="c7g-eC-OtV"/>
+                        <outlet property="goButton" destination="KJA-S0-PiD" id="DHM-Re-rKz"/>
+                        <outlet property="saveButton" destination="1WT-7L-NDc" id="7v9-we-bIy"/>
                         <segue destination="wt1-HM-tv5" kind="presentation" identifier="searchcomplete" id="V3q-P3-ngC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4r-xw-cQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="u7R-H2-XG8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="-765"/>
+            <point key="canvasLocation" x="3159.1999999999998" y="-866.71664167916049"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="tne-QT-ifu">
@@ -215,9 +214,7 @@
                     <navigationItem key="navigationItem" title="Library" id="wpL-kW-yhQ">
                         <barButtonItem key="leftBarButtonItem" title="S" id="PCt-1r-Tau">
                             <connections>
-                                <segue destination="zt8-mK-BPL" kind="popoverPresentation" popoverAnchorBarButtonItem="PCt-1r-Tau" id="Rtg-nL-fh7">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="ekL-Qz-iIT" kind="presentation" id="Rtg-nL-fh7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="D3q-YP-i7o">
@@ -268,28 +265,25 @@
             <point key="canvasLocation" x="1967" y="331"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="T4a-AF-H4V">
+        <scene sceneID="syJ-Mb-paD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-qK-9V8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3E1-9q-Qru" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ekL-Qz-iIT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gbd-bj-xWQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Vs-7P-X3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zt8-mK-BPL" kind="relationship" relationship="rootViewController" id="kS8-Wz-S9h"/>
+                        <segue destination="zt8-mK-BPL" kind="relationship" relationship="rootViewController" id="zwO-Hs-Ft3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5y-Et-LjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="-811"/>
+            <point key="canvasLocation" x="2220" y="-866.71664167916049"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="150" height="240"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="kS8-Wz-S9h"/>
-    </inferredMetricsTieBreakers>
 </document>

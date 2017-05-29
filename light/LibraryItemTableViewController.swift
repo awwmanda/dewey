@@ -22,6 +22,13 @@ class LibraryItemTableViewController: UITableViewController {
             libItems.append(libraryitem)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
+
+        if let sourceViewController = sender.source as? SearchViewController, let libraryitem = sourceViewController.libraryitem {
+            //add a new library item
+            let newIndexPath = IndexPath(row: libItems.count, section:0)
+            libItems.append(libraryitem)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
     
     //MARK: Private Methods

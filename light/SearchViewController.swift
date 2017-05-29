@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import os.log
 
 class SearchViewController: UIViewController {
     
     //MARK:Properties
     
+    
     @IBOutlet weak var SearchBar: UITextField!
-    @IBOutlet weak var EnterButton: UIButton!
+    @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var SearchLabel: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     var urlstring = "http://openlibrary.org/search.json?q="
+    var libItems = [LibraryItem]()
+   // var libraryItem = LibraryItem()
+    var libraryitem: LibraryItem?    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  [[UIApplication sharedApplication] setStatusBarHidden:NO]
+        
+        let libraryItems: LibraryItemTableViewController = LibraryItemTableViewController()
+        libItems = libraryItems.libItems
 
         // Do any additional setup after loading the view.
     }
@@ -29,17 +41,30 @@ class SearchViewController: UIViewController {
     }
 
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    //tis method lets you configure a view controller before its presented
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        //configure the destination view controller only when the save button is pressed
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("the save buttonwas not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let title = "testgin2"
+        //  let cover = nil
+        let userRating = 4
+        
+        //set the item to be passed to LibraryItemTableViewController after the unwind segue
+        libraryitem = LibraryItem(title: title, itemType: "", author: "", userRating: userRating, isbn: "", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+        
     }
-    */
 
     //MARK:Actions
+    
+    
     
     @IBAction func search(_ sender: UIButton) {
         
@@ -63,10 +88,18 @@ class SearchViewController: UIViewController {
                         //If you want array of task id you can try like
                         let title = docs.flatMap { $0["title_suggest"] as? String }
                         let titleresult = title.first
-                        print(docs)
+                       // print(docs)
                         print(title)
                     
-                    LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 0, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+                    
+                    let newLibItem = LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 0, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+                //    libItems.append(newLibItem)!
+                  //      for LibraryItem in self.libItems {
+                    //        print(LibraryItem)
+                            
+                 //   }
+                    
+                    
                     
                     //self.SearchLabel.text = " " + titleresult!
 
@@ -81,7 +114,8 @@ class SearchViewController: UIViewController {
                                         }
         .resume()
     
-        //performSegue(withIdentifier: "searchcomplete", sender: self)
+     //   performSegue(withIdentifier: "searchcomplete", sender: self)
         //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/969535-M.jpg"
     }
+    
 }
