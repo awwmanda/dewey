@@ -22,6 +22,7 @@ class SearchViewController: UIViewController {
     var urlstring = "http://openlibrary.org/search.json?q="
     var libItems = [LibraryItem]()
    // var libraryItem = LibraryItem()
+    var newlibitem: LibraryItem?
     var libraryitem: LibraryItem?    
 
     override func viewDidLoad() {
@@ -53,12 +54,12 @@ class SearchViewController: UIViewController {
             return
         }
         
-        let title = "testgin2"
+     //   let title = "testgin2"
         //  let cover = nil
-        let userRating = 4
+       // let userRating = 4
         
         //set the item to be passed to LibraryItemTableViewController after the unwind segue
-        libraryitem = LibraryItem(title: title, itemType: "", author: "", userRating: userRating, isbn: "", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+        libraryitem = self.newlibitem
         
     }
 
@@ -92,7 +93,7 @@ class SearchViewController: UIViewController {
                         print(title)
                     
                     
-                    let newLibItem = LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 0, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+                    self.newlibitem = LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 1, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
                 //    libItems.append(newLibItem)!
                   //      for LibraryItem in self.libItems {
                     //        print(LibraryItem)
