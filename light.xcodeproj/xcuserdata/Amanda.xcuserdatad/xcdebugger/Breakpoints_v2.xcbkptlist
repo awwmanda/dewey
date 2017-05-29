@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "light/SearchViewController.swift"
+            timestampString = "517765365.220908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "search(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "light.SearchViewController.(search (__ObjC.UIButton) -&gt; ()).(closure #1)"
+                  moduleName = "light"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Amanda/Dev/shehacks/dewey/light/SearchViewController.swift"
+                  timestampString = "517770616.074772"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "3729">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "light.SearchViewController.(search (__ObjC.UIButton) -&gt; ()).(closure #1)"
+                  moduleName = "light"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Amanda/Dev/shehacks/dewey/light/SearchViewController.swift"
+                  timestampString = "517770616.079859"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "4209">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -69,6 +69,8 @@ class SearchViewController: UIViewController {
     
     @IBAction func search(_ sender: UIButton) {
         
+    //searching
+        
        // var searchdata = SearchBar.text
         let searchdata = (SearchBar.text as! NSString).replacingOccurrences(of: " ", with: "+")
         //append search data to main url
@@ -82,31 +84,29 @@ class SearchViewController: UIViewController {
             else {
                 do{
                     let searchresults = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-                //    let docs = searchresults["docs"] as! [String:Any]
-                    //    print (docs)
-                    
                     let docs = searchresults["docs"] as! [[String: Any]]
+                    //print (docs)
                         //If you want array of task id you can try like
                         let title = docs.flatMap { $0["title_suggest"] as? String }
                         let titleresult = title.first
-                       // print(docs)
-                        print(title)
+                        print(title.first)
+                    let authorresult = docs.flatMap {$0["author_name"] as? Any }
+                    //let authorresults = docs[0].valueForKey("author_name") as? String
+  //                  print (authorresult)
+                    print(authorresult.first)
+                    let coverimageid = docs.flatMap {$0["cover_i"] as? Int }
+                    //let coverid = coverimageid.first
+                    print (coverimageid.first)
+                   // let authorname = authorresult[0] as! String ?? ""
+                        //authorresult as? String ?? ""
+                  //  let authorresult = authorresults.flatMap {$0[
+                   //     authorresults.first
+                   // let authorresult = author.first
                     
+                    //retrieve image url
                     
-                    self.newlibitem = LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 1, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
-                //    libItems.append(newLibItem)!
-                  //      for LibraryItem in self.libItems {
-                    //        print(LibraryItem)
-                            
-                 //   }
-                    
-                    
-                    
-                    //self.SearchLabel.text = " " + titleresult!
+                    self.newlibitem = LibraryItem(title: titleresult!, itemType: "book", author: "J.K. Rowling", userRating: 0, isbn: "9784915512452", inTopFive: false, currentItem: false, cover: #imageLiteral(resourceName: "lib3"), userReview: "")
 
-                 //  for (key, value) in docs {
-                //      print("\(key) - \(value) ")
-                //    }
                     
                 } catch let error as NSError {
                     print(error)
@@ -116,7 +116,7 @@ class SearchViewController: UIViewController {
         .resume()
     
      //   performSegue(withIdentifier: "searchcomplete", sender: self)
-        //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/969535-M.jpg"
+        //note: cover_i plugs into cover API "http://covers.openlibrary.org/b/id/7236486-M.jpg"
     }
     
 }

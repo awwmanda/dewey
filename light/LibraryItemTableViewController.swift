@@ -52,7 +52,7 @@ class LibraryItemTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // load sample data
-        loadSampleLibraryItems()
+        //loadSampleLibraryItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +88,7 @@ class LibraryItemTableViewController: UITableViewController {
         cell.titleLabel.text = libItem.title
         cell.coverImageView.image = libItem.cover
         cell.ratingControl.rating = libItem.userRating!
+        cell.authorLabel.text = libItem.author
 
         return cell
     }

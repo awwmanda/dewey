@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37273A001EDC808A00BE40D8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372739FF1EDC808900BE40D8 /* ProfileViewController.swift */; };
+		37273A021EDC8FA800BE40D8 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37273A011EDC8FA800BE40D8 /* BookViewController.swift */; };
 		3750F6E41ED9453000435D66 /* LibraryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */; };
 		3750F6E61ED94CA600435D66 /* LibraryItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */; };
 		3754DC001ED5B41D00B2CF1D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754DBFF1ED5B41D00B2CF1D /* RatingControl.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372739FF1EDC808900BE40D8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		37273A011EDC8FA800BE40D8 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemTableViewCell.swift; sourceTree = "<group>"; };
 		3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemTableViewController.swift; sourceTree = "<group>"; };
 		3754DBFF1ED5B41D00B2CF1D /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				37FB04011ED92CA300D817DA /* LibraryItem.swift */,
 				37CD66831ED44A3600590A0A /* LibItemViewController.swift */,
 				37CD66851ED44A3600590A0A /* Main.storyboard */,
+				37273A011EDC8FA800BE40D8 /* BookViewController.swift */,
+				372739FF1EDC808900BE40D8 /* ProfileViewController.swift */,
 				37BCA9EA1EDAB35700D46435 /* SearchViewController.swift */,
 				3750F6E51ED94CA600435D66 /* LibraryItemTableViewController.swift */,
 				3750F6E31ED9453000435D66 /* LibraryItemTableViewCell.swift */,
@@ -283,6 +289,8 @@
 				37CD66841ED44A3600590A0A /* LibItemViewController.swift in Sources */,
 				3754DC001ED5B41D00B2CF1D /* RatingControl.swift in Sources */,
 				3750F6E61ED94CA600435D66 /* LibraryItemTableViewController.swift in Sources */,
+				37273A001EDC808A00BE40D8 /* ProfileViewController.swift in Sources */,
+				37273A021EDC8FA800BE40D8 /* BookViewController.swift in Sources */,
 				37CD66821ED44A3600590A0A /* AppDelegate.swift in Sources */,
 				37BCA9E91EDAB21900D46435 /* User.swift in Sources */,
 			);
