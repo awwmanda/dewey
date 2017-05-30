@@ -81,26 +81,20 @@ class SearchViewController: UIViewController {
                 print ("Error when executing URL task")}
             else {
                 do{
-                    let searchresults = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-                //    let docs = searchresults["docs"] as! [String:Any]
-                    //    print (docs)
-                    
-                    let docs = searchresults["docs"] as! [[String: Any]]
-                        //If you want array of task id you can try like
-                        let title = docs.flatMap { $0["title_suggest"] as? String }
-                        let titleresult = title.first
-                       // print(docs)
-                        print(title)
-                    
-                    
-                    self.newlibitem = LibraryItem(title: titleresult!, itemType: "book", author: "test", userRating: 1, isbn: "12345", inTopFive: false, currentItem: false, cover: nil, userReview: "")
-                //    libItems.append(newLibItem)!
-                  //      for LibraryItem in self.libItems {
-                    //        print(LibraryItem)
-                            
-                 //   }
-                    
-                    
+                    let json = try JSONSerialization.jsonWithObjectRoot(with: data!, options: [])
+					if let searchresults = json as? [String: Any] {
+						if let docs = searchresults["docs"] as? [Any] {
+							for doc in docs {
+								if let title = doc["title"] as? String,
+									let itemType = doc["type"] as? String,
+									let author = (doc["author_name"] as? [Any]).first as? String,
+									let isbn = doc["isbn"] as? [Any]).first as? String {
+										self.newlibitem = LibraryItem(title: title, itemType: itemType, author: author, userRating: 1, isbn: isbn, inTopFive: false, currentItem: false, cover: nil, userReview: "")
+										libItems.append(newLibItem)!
+									}
+							}
+						}
+					}
                     
                     //self.SearchLabel.text = " " + titleresult!
 
