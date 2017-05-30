@@ -81,21 +81,23 @@ class SearchViewController: UIViewController {
                 print ("Error when executing URL task")}
             else {
                 do{
-                    let json = try JSONSerialization.jsonWithObjectRoot(with: data!, options: [])
+                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
 					if let searchresults = json as? [String: Any] {
-						if let docs = searchresults["docs"] as? [Any] {
+						if let docs = searchresults["docs"] as? [AnyObject] {
 							for doc in docs {
 								if let title = doc["title"] as? String,
 									let itemType = doc["type"] as? String,
-									let author = (doc["author_name"] as? [Any]).first as? String,
-									let isbn = doc["isbn"] as? [Any]).first as? String {
-										self.newlibitem = LibraryItem(title: title, itemType: itemType, author: author, userRating: 1, isbn: isbn, inTopFive: false, currentItem: false, cover: nil, userReview: "")
-										libItems.append(newLibItem)!
+                                    let author = doc["author_name"] as? [Any]{//).first as? String,
+                                    let authorname = (author.first) as? String
+									//let isbn = (doc["isbn"] as? [AnyObject]).first as? String {
+										self.newlibitem = LibraryItem(title: title, itemType: itemType, author: authorname, userRating: 1, isbn: "isbn", inTopFive: false, currentItem: false, cover: nil, userReview: "")
+										self.libItems.append(self.newlibitem!)
 									}
-							}
+                                }
 						}
 					}
                     
+
                     //self.SearchLabel.text = " " + titleresult!
 
                  //  for (key, value) in docs {
